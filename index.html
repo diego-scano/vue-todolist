@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+
+    <div id="root">
+
+      <img src="img/logo.png" alt="logo"><br>
+
+      <input v-model="input" @keyup.enter="submit" placeholder="Nuovo ToDo">
+      <button id="add" @click="submit">Aggiungi</button>
+      <button id="reset" @click="reset">Reset</button>
+
+      <div id="list-container">
+        <ol>
+          <li v-for="(element, index) in array">
+            <div id="element">{{element}}</div>
+            <div id="icon">
+              <i class="fa fa-trash" @click="remove(index)"></i>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
